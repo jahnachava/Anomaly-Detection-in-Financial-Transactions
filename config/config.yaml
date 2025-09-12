@@ -1,0 +1,196 @@
+# Configuration file for Anomaly Detection in Financial Transactions
+
+# Data Configuration
+data:
+  raw_data_path: "data/raw/"
+  processed_data_path: "data/processed/"
+  external_data_path: "data/external/"
+  
+  # Dataset specific settings
+  dataset:
+    name: "credit_card_fraud"
+    target_column: "Class"
+    test_size: 0.2
+    validation_size: 0.1
+    random_state: 42
+    
+  # Feature engineering
+  features:
+    numerical_features:
+      - "Time"
+      - "V1"
+      - "V2"
+      - "V3"
+      - "V4"
+      - "V5"
+      - "V6"
+      - "V7"
+      - "V8"
+      - "V9"
+      - "V10"
+      - "V11"
+      - "V12"
+      - "V13"
+      - "V14"
+      - "V15"
+      - "V16"
+      - "V17"
+      - "V18"
+      - "V19"
+      - "V20"
+      - "V21"
+      - "V22"
+      - "V23"
+      - "V24"
+      - "V25"
+      - "V26"
+      - "V27"
+      - "V28"
+      - "Amount"
+    
+    categorical_features: []
+    
+    # Feature scaling
+    scaling_method: "standard"  # standard, minmax, robust
+    
+    # Feature selection
+    feature_selection:
+      method: "mutual_info"  # mutual_info, chi2, f_score
+      k_best: 20
+
+# Model Configuration
+models:
+  # Supervised Learning Models
+  supervised:
+    random_forest:
+      n_estimators: 100
+      max_depth: 10
+      min_samples_split: 5
+      min_samples_leaf: 2
+      random_state: 42
+      
+    xgboost:
+      n_estimators: 100
+      max_depth: 6
+      learning_rate: 0.1
+      subsample: 0.8
+      colsample_bytree: 0.8
+      random_state: 42
+      
+    neural_network:
+      hidden_layers: [64, 32, 16]
+      activation: "relu"
+      optimizer: "adam"
+      learning_rate: 0.001
+      epochs: 100
+      batch_size: 32
+      validation_split: 0.2
+      
+  # Unsupervised Learning Models
+  unsupervised:
+    isolation_forest:
+      n_estimators: 100
+      contamination: 0.1
+      max_samples: "auto"
+      random_state: 42
+      
+    local_outlier_factor:
+      n_neighbors: 20
+      contamination: 0.1
+      algorithm: "auto"
+      
+    one_class_svm:
+      kernel: "rbf"
+      gamma: "scale"
+      nu: 0.1
+      
+    autoencoder:
+      encoding_dim: 32
+      hidden_layers: [64, 32]
+      activation: "relu"
+      optimizer: "adam"
+      learning_rate: 0.001
+      epochs: 100
+      batch_size: 32
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "roc_auc"
+    - "pr_auc"
+    - "confusion_matrix"
+    
+  cross_validation:
+    cv_folds: 5
+    scoring: "roc_auc"
+    
+  # Threshold optimization
+  threshold_optimization:
+    method: "youden"  # youden, f1_optimal, precision_recall_curve
+    
+  # False positive analysis
+  false_positive_analysis:
+    enabled: true
+    max_false_positives: 0.05  # 5% of total transactions
+
+# Dashboard Configuration
+dashboard:
+  title: "Financial Transaction Anomaly Detection Dashboard"
+  host: "localhost"
+  port: 8501
+  theme: "light"
+  
+  # Real-time monitoring
+  real_time:
+    enabled: true
+    update_interval: 5  # seconds
+    max_transactions_display: 1000
+    
+  # Visualization settings
+  visualization:
+    chart_types: ["line", "bar", "scatter", "heatmap"]
+    color_scheme: "viridis"
+    figure_size: [12, 8]
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/anomaly_detection.log"
+  max_file_size: "10MB"
+  backup_count: 5
+
+# Model Persistence
+model_persistence:
+  model_save_path: "models/"
+  model_format: "joblib"  # joblib, pickle, h5
+  save_best_only: true
+  monitor_metric: "roc_auc"
+  
+# Explainability
+explainability:
+  shap:
+    enabled: true
+    max_samples: 1000
+    background_samples: 100
+    
+  lime:
+    enabled: true
+    num_features: 10
+    num_samples: 5000
+
+# Performance Monitoring
+performance:
+  memory_monitoring: true
+  execution_time_tracking: true
+  model_performance_tracking: true
+  
+# Security and Privacy
+security:
+  data_encryption: false
+  anonymization: true
+  audit_logging: true

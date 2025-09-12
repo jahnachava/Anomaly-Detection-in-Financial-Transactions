@@ -1,0 +1,59 @@
+# Core Data Science Libraries
+numpy==1.24.3
+pandas==2.0.3
+scipy==1.11.1
+
+# Machine Learning Libraries
+scikit-learn==1.3.0
+xgboost==1.7.6
+lightgbm==4.0.0
+tensorflow==2.13.0
+keras==2.13.1
+
+# Data Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly==5.15.0
+
+# Dashboard and Web Interface
+streamlit==1.25.0
+dash==2.12.1
+dash-bootstrap-components==1.4.1
+
+# Model Explainability
+shap==0.42.1
+lime==0.2.0.1
+
+# Data Processing and Utilities
+imbalanced-learn==0.11.0
+optuna==3.2.0
+joblib==1.3.2
+tqdm==4.65.0
+
+# Jupyter and Development
+jupyter==1.0.0
+ipykernel==6.25.0
+notebook==6.5.4
+
+# Testing
+pytest==7.4.0
+pytest-cov==4.1.0
+
+# Configuration and Logging
+pyyaml==6.0.1
+python-dotenv==1.0.0
+loguru==0.7.0
+
+# Data Validation
+great-expectations==0.17.19
+
+# Time Series Analysis
+statsmodels==0.14.0
+
+# Database Connectivity (if needed)
+sqlalchemy==2.0.19
+psycopg2-binary==2.9.7
+
+# API Development (if needed)
+fastapi==0.101.1
+uvicorn==0.23.2
