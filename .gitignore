@@ -3,9 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+.idea
 # C extensions
 *.so
-
+VIVA_PRESENTATION_GUIDE.md
 # Distribution / packaging
 .Python
 build/

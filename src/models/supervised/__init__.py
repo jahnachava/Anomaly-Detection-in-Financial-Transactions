@@ -9,10 +9,12 @@ from .random_forest import RandomForestDetector
 from .xgboost_detector import XGBoostDetector
 from .neural_network import NeuralNetworkDetector
 from .base_supervised import BaseSupervisedDetector
+from .supervised_detector import SupervisedAnomalyDetector
 
 __all__ = [
     'BaseSupervisedDetector',
     'RandomForestDetector',
     'XGBoostDetector',
-    'NeuralNetworkDetector'
+    'NeuralNetworkDetector',
+    'SupervisedAnomalyDetector'
 ]

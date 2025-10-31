@@ -15,13 +15,13 @@ from loguru import logger
 # Add src to path
 sys.path.append(str(Path(__file__).parent / "src"))
 
-from utils.config_loader import ConfigLoader
-from utils.logger_setup import setup_logger
-from data_preprocessing import DataLoader, FeatureEngineer, DataScaler, DataSplitter
-from models.supervised import SupervisedAnomalyDetector
-from models.unsupervised import UnsupervisedAnomalyDetector
-from evaluation import ModelEvaluator, ModelComparator
-from visualization.dashboard import AnomalyDetectionDashboard
+from src.utils.config_loader import ConfigLoader
+from src.utils.logger_setup import setup_logger
+from src.data_preprocessing import DataLoader, FeatureEngineer, DataScaler, DataSplitter
+from src.models.supervised import SupervisedAnomalyDetector
+from src.models.unsupervised import UnsupervisedAnomalyDetector
+from src.evaluation import ModelEvaluator, ModelComparator
+from src.visualization.dashboard import AnomalyDetectionDashboard
 
 def main():
     """
